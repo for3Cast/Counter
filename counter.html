@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Counter</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <style>
+      #countLabel{
+            display: block;
+            text-align: center;
+            font-size: 10em;
+            font-family: Helvetica;
+            margin-top: 80px;
+      }
+      #btnContainer{
+            text-align: center;
+      }
+      .buttons{
+            padding: 10px 20px ;
+            margin: 10px;
+            font-size: 1.5em;
+            color: white;
+            background-color: hsl(0, 100%, 70%);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.25s;
+      }
+      .buttons:hover{
+            background-color: hsl(0, 100%, 75%)
+      }
+      label{
+            color: rgb(255, 255, 255);
+      }
+      body{
+            background-color: #333;
+      }
+ </style>
+</head>
+<body>
+       <label id="countLabel">0</label><br>
+      <div id="btnContainer">   
+            <button id="decreaseBtn" class="buttons"><i class="fa-solid fa-caret-down"></i></button>
+            <button id="resetBtn" class="buttons"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="increaseBtn" class="buttons"><i class="fa-solid fa-caret-up"></i></button>
+      </div>
+      
+
+
+      <script>
+            const decreaseBtn = document.getElementById("decreaseBtn");
+            const resetBtn = document.getElementById("resetBtn");
+            const increaseBtn = document.getElementById("increaseBtn");
+            const countLabel = document.getElementById("countLabel");
+            
+            let count = 0;
+
+            increaseBtn.onclick = function(){
+                  count++;
+                  countLabel.textContent = count;
+            }
+            decreaseBtn.onclick = function(){
+                  count--;
+                  countLabel.textContent = count;
+            }
+            resetBtn.onclick = function(){
+                  count = 0;
+                  countLabel.textContent = count;
+            }
+      </script>
+</body>
+</html>
